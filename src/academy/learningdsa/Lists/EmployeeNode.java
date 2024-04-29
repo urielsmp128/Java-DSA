@@ -7,6 +7,7 @@ public class EmployeeNode {
 
     public EmployeeNode(Employee employee){
         this.employee = employee;
+        this.next = null;
     }
 
     public Employee getEmployee() {
@@ -23,5 +24,9 @@ public class EmployeeNode {
 
     public void setNext(EmployeeNode next) {
         this.next = next;
+    }
+
+    public String toString(){
+        return  employee.toString();
     }
 }
