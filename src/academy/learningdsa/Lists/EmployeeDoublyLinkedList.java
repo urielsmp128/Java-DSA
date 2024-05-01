@@ -67,6 +67,24 @@ public class EmployeeDoublyLinkedList {
         }
     }
 
+    public void addBefore(Employee employeeToBeInserted, Employee employeeBefore){
+        EmployeeNode current = head;
+        if (head == null){
+            throw  new NoSuchElementException("Empty Linked List");
+        } else if (head.getEmployee().equals(employeeBefore)) {
+            addToFront(employeeToBeInserted);
+        }
+        while (!current.getNext().getEmployee().equals(employeeBefore)){
+            current = current.getNext();
+        }
+        EmployeeNode node = new EmployeeNode(employeeToBeInserted);
+        node.setNext(current.getNext());
+        node.setPrev(current);
+        current.getNext().setPrev(node);
+        current.setNext(node);
+        size++;
+    }
+
     public void printList(){
         EmployeeNode current = head;
         while ( current != null){
@@ -81,12 +99,12 @@ public class EmployeeDoublyLinkedList {
         employeeDoublyLinkedList.addToEnd(new Employee("Uriel","Madrigal", 1234));
         employeeDoublyLinkedList.addToEnd(new Employee("Elsa", "Garzon", 4567));
         employeeDoublyLinkedList.addToEnd(new Employee("Juan", "Garcia", 6987));
-        employeeDoublyLinkedList.removeFromEnd();
+        employeeDoublyLinkedList.addBefore(new Employee("Jesus", "Madrigal", 5874), new Employee("Juan", "Garcia", 6987));
 
-        //employeeDoublyLinkedList.printList();
+        employeeDoublyLinkedList.printList();
         //System.out.println(employeeDoublyLinkedList.getSize());
 
-        System.out.println(employeeDoublyLinkedList.tail.getNext());
+        //System.out.println(employeeDoublyLinkedList.tail.getNext());
 
     }
 }
