@@ -1,4 +1,4 @@
-package academy.learningdsa.IntroArrays;
+package academy.learningdsa.introarrays;
 
 public class IntroArrays {
     public static void main(String[] args) {

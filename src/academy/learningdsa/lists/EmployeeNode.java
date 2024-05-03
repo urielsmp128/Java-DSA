@@ -1,4 +1,4 @@
-package academy.learningdsa.Lists;
+package academy.learningdsa.lists;
 
 public class EmployeeNode {
 

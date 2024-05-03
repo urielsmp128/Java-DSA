@@ -1,4 +1,4 @@
-package academy.learningdsa.SortingAlgos;
+package academy.learningdsa.sortingalgos;
 
 public class Recursion {
 
