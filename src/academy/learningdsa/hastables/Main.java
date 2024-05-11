@@ -16,6 +16,8 @@ public class Main {
         ht.put("Wilson", mikeWilson);
         ht.put("Smith", marySmith);
 
+        System.out.println(ht.get("Smith"));
+
         ht.printHashtable();
     }
 }
