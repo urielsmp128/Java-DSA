@@ -33,7 +33,7 @@ public class SimpleHashtable {
         }
 
         if (occupied(hashedKey)){
-            System.out.println("Srry, there's already an employee at position " + hashedKey);
+            System.out.println("Sorry, there's already an employee at position " + hashedKey);
         }else {
             hashtable[hashedKey] = new StoredEmployee(key, employee);
         }
@@ -77,6 +77,15 @@ public class SimpleHashtable {
 
         Employee employee = hashtable[hashedKey].employee;
         hashtable[hashedKey] = null;
+
+        //Implementinh rehashing
+        StoredEmployee[] oldHashtable = hashtable;
+        hashtable = new StoredEmployee[oldHashtable.length];
+        for (int i = 0; i < oldHashtable.length; i++){
+            if(oldHashtable[i] != null){
+                put(oldHashtable[i].key, oldHashtable[i].employee);
+            }
+        }
         return employee;
     }
 
